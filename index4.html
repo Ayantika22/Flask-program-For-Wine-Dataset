@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML Deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+<body 
+ <div class="login">
+	<h1>Predict Wine Class Type</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+
+<div class="field">
+         <label for="Alcohol" class="label">Alcohol</label>
+          <div class="control">
+          <input type="text" name="Alcohol" class="input" placeholder="Number between 11.03 and 14.83" min="11.03" max="14.83" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+<div class="field">
+         <label for="Malic_Acid" class="label">Malic_Acid</label>
+          <div class="control">
+          <input type="text" name="Malic_Acid" class="input" placeholder="Number between 0.74 and 5.8" min="0.74" max="5.8" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Ash" class="label">Ash</label>
+          <div class="control">
+          <input type="text" name="Ash" class="input" placeholder="Number between 1.36 and 3.23" min="1.36" max="3.23" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Ash_Alcanity" class="label">Ash_Alcanity</label>
+          <div class="control">
+          <input type="text" name="Ash_Alcanity" class="input" placeholder="Number between 10.6 and 30" min="10.6" max="30" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Magnesium" class="label">Magnesium</label>
+          <div class="control">
+          <input type="text" name="Magnesium" class="input" placeholder="Number between 70 and 162" min="70" max="162" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Total_Phenols" class="label">Total_Phenols</label>
+          <div class="control">
+          <input type="text" name="Total_Phenols" class="input" placeholder="Number between 0.98 and 3.88" min="0.98" max="3.88" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Flavanoids" class="label">Flavanoids</label>
+          <div class="control">
+          <input type="text" name="Flavanoids" class="input" placeholder="Number between 0.34 and 5.08" min="0.34" max="5.08" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Nonflavanoid_Phenols" class="label">Nonflavanoid_Phenols</label>
+          <div class="control">
+          <input type="text" name="Nonflavanoid_Phenols" class="input" placeholder="Number between 0.13 and 0.66" min="0.13" max="0.66" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Proanthocyanins" class="label">Proanthocyanins</label>
+          <div class="control">
+          <input type="text" name="Proanthocyanins" class="input" placeholder="Number between 0.41 and 3.58" min="0.41" max="3.58" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Color_Intensity" class="label">Color_Intensity</label>
+          <div class="control">
+          <input type="text" name="Color_Intensity" class="input" placeholder="Number between 1.28 and 13" min="1.28" max="13" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Hue" class="label">Hue</label>
+          <div class="control">
+          <input type="text" name="Hue" class="input" placeholder="Number between 0.48 and 1.71" min="0.48" max="1.71" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="OD280" class="label">OD280</label>
+          <div class="control">
+          <input type="text" name="OD280" class="input" placeholder="Number between 1.27 and 4" min="1.27" max="4" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+<div class="field">
+         <label for="Proline" class="label">Proline</label>
+          <div class="control">
+          <input type="text" name="Proline" class="input" placeholder="Number between 278 and 1680" min="278" max="1680" size="32" step="0.1">
+          </div>
+          </div> <br> <br> 
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+<button class="button" type="reset">Clear</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+ </div>
+</body>
+</html>
